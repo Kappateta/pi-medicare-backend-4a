@@ -7,18 +7,47 @@
   "auth": {
     "type": "basic",
     "basic": [
-      { "key": "username", "value": "{{adminUser}}", "type": "string" },
-      { "key": "password", "value": "{{adminPass}}", "type": "string" }
+      {
+        "key": "username",
+        "value": "{{adminUser}}",
+        "type": "string"
+      },
+      {
+        "key": "password",
+        "value": "{{adminPass}}",
+        "type": "string"
+      }
     ]
   },
   "variable": [
-    { "key": "baseUrl", "value": "http://localhost:8080/api" },
-    { "key": "adminUser", "value": "admin" },
-    { "key": "adminPass", "value": "admin123" },
-    { "key": "recepcaoUser", "value": "recepcao" },
-    { "key": "recepcaoPass", "value": "recepcao123" },
-    { "key": "dataConsulta", "value": "2026-12-15T10:00:00" },
-    { "key": "diaConsulta", "value": "2026-12-15" }
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080/api"
+    },
+    {
+      "key": "adminUser",
+      "value": "admin"
+    },
+    {
+      "key": "adminPass",
+      "value": "admin123"
+    },
+    {
+      "key": "recepcaoUser",
+      "value": "recepcao"
+    },
+    {
+      "key": "recepcaoPass",
+      "value": "recepcao123"
+    },
+    {
+      "key": "dataConsulta",
+      "value": "2026-12-15T10:00:00"
+    },
+    {
+      "key": "diaConsulta",
+      "value": "2026-12-15"
+    }
   ],
   "item": [
     {
@@ -28,88 +57,920 @@
           "name": "Criar especialidade (201)",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Cardiologia\",\n  \"descricao\": \"Coração e sistema circulatório\"\n}" },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Cardiologia\",\n  \"descricao\": \"Coração e sistema circulatório\"\n}"
+            },
             "url": "{{baseUrl}}/especialidades"
-          }
+          },
+          "response": [
+            {
+              "name": "201 Created",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nome\": \"Cardiologia\",\n  \"descricao\": \"Coração e sistema circulatório\"\n}"
+                },
+                "url": "{{baseUrl}}/especialidades"
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:39:02 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": 1,\n  \"nome\": \"Cardiologia\",\n  \"descricao\": \"Coração e sistema circulatório\"\n}"
+            }
+          ]
         },
         {
           "name": "Criar especialidade sem médicos (201)",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Dermatologia\",\n  \"descricao\": \"Pele, cabelo e unhas\"\n}" },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Dermatologia\",\n  \"descricao\": \"Pele, cabelo e unhas\"\n}"
+            },
             "url": "{{baseUrl}}/especialidades"
-          }
+          },
+          "response": [
+            {
+              "name": "201 Created",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nome\": \"Dermatologia\",\n  \"descricao\": \"Pele, cabelo e unhas\"\n}"
+                },
+                "url": "{{baseUrl}}/especialidades"
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:39:02 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": 2,\n  \"nome\": \"Dermatologia\",\n  \"descricao\": \"Pele, cabelo e unhas\"\n}"
+            }
+          ]
         },
         {
           "name": "Listar especialidades (200)",
-          "request": { "method": "GET", "url": "{{baseUrl}}/especialidades" }
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/especialidades"
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "GET",
+                "url": "{{baseUrl}}/especialidades"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:39:02 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"id\": 1,\n    \"nome\": \"Cardiologia\",\n    \"descricao\": \"Coração e sistema circulatório\"\n  },\n  {\n    \"id\": 2,\n    \"nome\": \"Dermatologia\",\n    \"descricao\": \"Pele, cabelo e unhas\"\n  }\n]"
+            }
+          ]
         },
         {
           "name": "Atualizar especialidade (200)",
           "request": {
             "method": "PUT",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Cardiologia\",\n  \"descricao\": \"Diagnóstico e tratamento de doenças cardiovasculares\"\n}" },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Cardiologia\",\n  \"descricao\": \"Diagnóstico e tratamento de doenças cardiovasculares\"\n}"
+            },
             "url": "{{baseUrl}}/especialidades/1"
-          }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nome\": \"Cardiologia\",\n  \"descricao\": \"Diagnóstico e tratamento de doenças cardiovasculares\"\n}"
+                },
+                "url": "{{baseUrl}}/especialidades/1"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:39:02 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": 1,\n  \"nome\": \"Cardiologia\",\n  \"descricao\": \"Diagnóstico e tratamento de doenças cardiovasculares\"\n}"
+            }
+          ]
         },
         {
           "name": "Excluir especialidade sem médicos (204)",
-          "request": { "method": "DELETE", "url": "{{baseUrl}}/especialidades/2" }
+          "request": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/especialidades/2"
+          },
+          "response": [
+            {
+              "name": "204 No Content",
+              "originalRequest": {
+                "method": "DELETE",
+                "url": "{{baseUrl}}/especialidades/2"
+              },
+              "status": "No Content",
+              "code": 204,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:39:02 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": ""
+            }
+          ]
         },
         {
           "name": "Criar convênio (201)",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Saúde Mais\",\n  \"percentualCobertura\": 60\n}" },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Saúde Mais\",\n  \"percentualCobertura\": 60\n}"
+            },
             "url": "{{baseUrl}}/convenios"
-          }
+          },
+          "response": [
+            {
+              "name": "201 Created",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nome\": \"Saúde Mais\",\n  \"percentualCobertura\": 60\n}"
+                },
+                "url": "{{baseUrl}}/convenios"
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:39:02 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": 1,\n  \"nome\": \"Saúde Mais\",\n  \"percentualCobertura\": 60\n}"
+            }
+          ]
         },
         {
           "name": "Criar médico (201)",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Dra. Ana Ribeiro\",\n  \"crm\": \"SP123456\",\n  \"email\": \"ana.ribeiro@medicare.test\",\n  \"valorConsulta\": 300.00,\n  \"especialidadeId\": 1\n}" },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Dra. Ana Ribeiro\",\n  \"crm\": \"SP123456\",\n  \"email\": \"ana.ribeiro@medicare.test\",\n  \"valorConsulta\": 300.00,\n  \"especialidadeId\": 1\n}"
+            },
             "url": "{{baseUrl}}/medicos"
-          }
+          },
+          "response": [
+            {
+              "name": "201 Created",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nome\": \"Dra. Ana Ribeiro\",\n  \"crm\": \"SP123456\",\n  \"email\": \"ana.ribeiro@medicare.test\",\n  \"valorConsulta\": 300.00,\n  \"especialidadeId\": 1\n}"
+                },
+                "url": "{{baseUrl}}/medicos"
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:39:03 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": 1,\n  \"nome\": \"Dra. Ana Ribeiro\",\n  \"crm\": \"SP123456\",\n  \"email\": \"ana.ribeiro@medicare.test\",\n  \"valorConsulta\": 300,\n  \"especialidade\": {\n    \"id\": 1,\n    \"nome\": \"Cardiologia\",\n    \"descricao\": \"Diagnóstico e tratamento de doenças cardiovasculares\"\n  }\n}"
+            }
+          ]
         },
         {
           "name": "Atualizar médico (200)",
           "request": {
             "method": "PUT",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Dra. Ana Ribeiro\",\n  \"crm\": \"SP123456\",\n  \"email\": \"ana.ribeiro@medicare.test\",\n  \"valorConsulta\": 250.00,\n  \"especialidadeId\": 1\n}" },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Dra. Ana Ribeiro\",\n  \"crm\": \"SP123456\",\n  \"email\": \"ana.ribeiro@medicare.test\",\n  \"valorConsulta\": 250.00,\n  \"especialidadeId\": 1\n}"
+            },
             "url": "{{baseUrl}}/medicos/1"
-          }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nome\": \"Dra. Ana Ribeiro\",\n  \"crm\": \"SP123456\",\n  \"email\": \"ana.ribeiro@medicare.test\",\n  \"valorConsulta\": 250.00,\n  \"especialidadeId\": 1\n}"
+                },
+                "url": "{{baseUrl}}/medicos/1"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:39:03 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": 1,\n  \"nome\": \"Dra. Ana Ribeiro\",\n  \"crm\": \"SP123456\",\n  \"email\": \"ana.ribeiro@medicare.test\",\n  \"valorConsulta\": 250,\n  \"especialidade\": {\n    \"id\": 1,\n    \"nome\": \"Cardiologia\",\n    \"descricao\": \"Diagnóstico e tratamento de doenças cardiovasculares\"\n  }\n}"
+            }
+          ]
         },
         {
           "name": "Criar paciente com convênio - recepção (201)",
           "request": {
-            "auth": { "type": "basic", "basic": [
-              { "key": "username", "value": "{{recepcaoUser}}", "type": "string" },
-              { "key": "password", "value": "{{recepcaoPass}}", "type": "string" } ] },
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{recepcaoUser}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{recepcaoPass}}",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Carlos Silva\",\n  \"cpf\": \"12345678901\",\n  \"email\": \"carlos@medicare.test\",\n  \"dataNascimento\": \"1990-05-20\",\n  \"convenioId\": 1\n}" },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Carlos Silva\",\n  \"cpf\": \"12345678901\",\n  \"email\": \"carlos@medicare.test\",\n  \"dataNascimento\": \"1990-05-20\",\n  \"convenioId\": 1\n}"
+            },
             "url": "{{baseUrl}}/pacientes"
-          }
+          },
+          "response": [
+            {
+              "name": "201 Created",
+              "originalRequest": {
+                "auth": {
+                  "type": "basic",
+                  "basic": [
+                    {
+                      "key": "username",
+                      "value": "{{recepcaoUser}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "password",
+                      "value": "{{recepcaoPass}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nome\": \"Carlos Silva\",\n  \"cpf\": \"12345678901\",\n  \"email\": \"carlos@medicare.test\",\n  \"dataNascimento\": \"1990-05-20\",\n  \"convenioId\": 1\n}"
+                },
+                "url": "{{baseUrl}}/pacientes"
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:39:03 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": 1,\n  \"nome\": \"Carlos Silva\",\n  \"cpf\": \"12345678901\",\n  \"email\": \"carlos@medicare.test\",\n  \"dataNascimento\": \"1990-05-20\",\n  \"convenio\": {\n    \"id\": 1,\n    \"nome\": \"Saúde Mais\",\n    \"percentualCobertura\": 60\n  }\n}"
+            }
+          ]
         },
         {
           "name": "Criar paciente particular (201)",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Mariana Souza\",\n  \"cpf\": \"98765432100\",\n  \"email\": \"mariana@medicare.test\",\n  \"dataNascimento\": \"1985-11-02\"\n}" },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Mariana Souza\",\n  \"cpf\": \"98765432100\",\n  \"email\": \"mariana@medicare.test\",\n  \"dataNascimento\": \"1985-11-02\"\n}"
+            },
             "url": "{{baseUrl}}/pacientes"
-          }
+          },
+          "response": [
+            {
+              "name": "201 Created",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nome\": \"Mariana Souza\",\n  \"cpf\": \"98765432100\",\n  \"email\": \"mariana@medicare.test\",\n  \"dataNascimento\": \"1985-11-02\"\n}"
+                },
+                "url": "{{baseUrl}}/pacientes"
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:39:03 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": 2,\n  \"nome\": \"Mariana Souza\",\n  \"cpf\": \"98765432100\",\n  \"email\": \"mariana@medicare.test\",\n  \"dataNascimento\": \"1985-11-02\",\n  \"convenio\": null\n}"
+            }
+          ]
         },
         {
           "name": "Buscar paciente por id (200)",
-          "request": { "method": "GET", "url": "{{baseUrl}}/pacientes/1" }
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/pacientes/1"
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "GET",
+                "url": "{{baseUrl}}/pacientes/1"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:39:03 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": 1,\n  \"nome\": \"Carlos Silva\",\n  \"cpf\": \"12345678901\",\n  \"email\": \"carlos@medicare.test\",\n  \"dataNascimento\": \"1990-05-20\",\n  \"convenio\": {\n    \"id\": 1,\n    \"nome\": \"Saúde Mais\",\n    \"percentualCobertura\": 60\n  }\n}"
+            }
+          ]
         }
       ]
     },
@@ -118,11 +979,193 @@
       "item": [
         {
           "name": "Pacientes por nome (200)",
-          "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/pacientes?nome=silva", "host": ["{{baseUrl}}"], "path": ["pacientes"], "query": [{ "key": "nome", "value": "silva" }] } }
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/pacientes?nome=silva",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pacientes"
+              ],
+              "query": [
+                {
+                  "key": "nome",
+                  "value": "silva"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{baseUrl}}/pacientes?nome=silva",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "pacientes"
+                  ],
+                  "query": [
+                    {
+                      "key": "nome",
+                      "value": "silva"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:39:03 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"id\": 1,\n    \"nome\": \"Carlos Silva\",\n    \"cpf\": \"12345678901\",\n    \"email\": \"carlos@medicare.test\",\n    \"dataNascimento\": \"1990-05-20\",\n    \"convenio\": {\n      \"id\": 1,\n      \"nome\": \"Saúde Mais\",\n      \"percentualCobertura\": 60\n    }\n  }\n]"
+            }
+          ]
         },
         {
           "name": "Médicos por especialidade (200)",
-          "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/medicos?especialidade=cardiologia", "host": ["{{baseUrl}}"], "path": ["medicos"], "query": [{ "key": "especialidade", "value": "cardiologia" }] } }
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/medicos?especialidade=cardiologia",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "medicos"
+              ],
+              "query": [
+                {
+                  "key": "especialidade",
+                  "value": "cardiologia"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{baseUrl}}/medicos?especialidade=cardiologia",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "medicos"
+                  ],
+                  "query": [
+                    {
+                      "key": "especialidade",
+                      "value": "cardiologia"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:39:04 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"id\": 1,\n    \"nome\": \"Dra. Ana Ribeiro\",\n    \"crm\": \"SP123456\",\n    \"email\": \"ana.ribeiro@medicare.test\",\n    \"valorConsulta\": 250,\n    \"especialidade\": {\n      \"id\": 1,\n      \"nome\": \"Cardiologia\",\n      \"descricao\": \"Diagnóstico e tratamento de doenças cardiovasculares\"\n    }\n  }\n]"
+            }
+          ]
         }
       ]
     },
@@ -132,26 +1175,380 @@
         {
           "name": "Agendar consulta com desconto do convênio (201)",
           "request": {
-            "auth": { "type": "basic", "basic": [
-              { "key": "username", "value": "{{recepcaoUser}}", "type": "string" },
-              { "key": "password", "value": "{{recepcaoPass}}", "type": "string" } ] },
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{recepcaoUser}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{recepcaoPass}}",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "body": { "mode": "raw", "raw": "{\n  \"medicoId\": 1,\n  \"pacienteId\": 1,\n  \"dataHora\": \"{{dataConsulta}}\",\n  \"observacoes\": \"Check-up anual\"\n}" },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"medicoId\": 1,\n  \"pacienteId\": 1,\n  \"dataHora\": \"{{dataConsulta}}\",\n  \"observacoes\": \"Check-up anual\"\n}"
+            },
             "url": "{{baseUrl}}/consultas"
-          }
+          },
+          "response": [
+            {
+              "name": "201 Created",
+              "originalRequest": {
+                "auth": {
+                  "type": "basic",
+                  "basic": [
+                    {
+                      "key": "username",
+                      "value": "{{recepcaoUser}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "password",
+                      "value": "{{recepcaoPass}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"medicoId\": 1,\n  \"pacienteId\": 1,\n  \"dataHora\": \"{{dataConsulta}}\",\n  \"observacoes\": \"Check-up anual\"\n}"
+                },
+                "url": "{{baseUrl}}/consultas"
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:39:04 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": 1,\n  \"medico\": {\n    \"id\": 1,\n    \"nome\": \"Dra. Ana Ribeiro\",\n    \"crm\": \"SP123456\",\n    \"email\": \"ana.ribeiro@medicare.test\",\n    \"valorConsulta\": 250,\n    \"especialidade\": {\n      \"id\": 1,\n      \"nome\": \"Cardiologia\",\n      \"descricao\": \"Diagnóstico e tratamento de doenças cardiovasculares\"\n    }\n  },\n  \"paciente\": {\n    \"id\": 1,\n    \"nome\": \"Carlos Silva\",\n    \"cpf\": \"12345678901\",\n    \"email\": \"carlos@medicare.test\",\n    \"dataNascimento\": \"1990-05-20\",\n    \"convenio\": {\n      \"id\": 1,\n      \"nome\": \"Saúde Mais\",\n      \"percentualCobertura\": 60\n    }\n  },\n  \"dataHora\": \"2026-12-15T10:00:00\",\n  \"status\": \"AGENDADA\",\n  \"valorFinal\": 100,\n  \"observacoes\": \"Check-up anual\"\n}"
+            }
+          ]
         },
         {
           "name": "Agenda do médico no dia (200)",
-          "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/medicos/1/agenda?data={{diaConsulta}}", "host": ["{{baseUrl}}"], "path": ["medicos", "1", "agenda"], "query": [{ "key": "data", "value": "{{diaConsulta}}" }] } }
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/medicos/1/agenda?data={{diaConsulta}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "medicos",
+                "1",
+                "agenda"
+              ],
+              "query": [
+                {
+                  "key": "data",
+                  "value": "{{diaConsulta}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{baseUrl}}/medicos/1/agenda?data={{diaConsulta}}",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "medicos",
+                    "1",
+                    "agenda"
+                  ],
+                  "query": [
+                    {
+                      "key": "data",
+                      "value": "{{diaConsulta}}"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:39:04 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"dataHora\": \"2026-12-15T08:00:00\",\n    \"disponivel\": true\n  },\n  {\n    \"dataHora\": \"2026-12-15T09:00:00\",\n    \"disponivel\": true\n  },\n  {\n    \"dataHora\": \"2026-12-15T10:00:00\",\n    \"disponivel\": false\n  },\n  {\n    \"dataHora\": \"2026-12-15T11:00:00\",\n    \"disponivel\": true\n  },\n  {\n    \"dataHora\": \"2026-12-15T12:00:00\",\n    \"disponivel\": true\n  },\n  {\n    \"dataHora\": \"2026-12-15T13:00:00\",\n    \"disponivel\": true\n  },\n  {\n    \"dataHora\": \"2026-12-15T14:00:00\",\n    \"disponivel\": true\n  },\n  {\n    \"dataHora\": \"2026-12-15T15:00:00\",\n    \"disponivel\": true\n  },\n  {\n    \"dataHora\": \"2026-12-15T16:00:00\",\n    \"disponivel\": true\n  },\n  {\n    \"dataHora\": \"2026-12-15T17:00:00\",\n    \"disponivel\": true\n  }\n]"
+            }
+          ]
         },
         {
           "name": "Histórico do paciente (200)",
-          "request": { "method": "GET", "url": "{{baseUrl}}/pacientes/1/historico" }
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/pacientes/1/historico"
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "GET",
+                "url": "{{baseUrl}}/pacientes/1/historico"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:39:04 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"id\": 1,\n    \"medico\": {\n      \"id\": 1,\n      \"nome\": \"Dra. Ana Ribeiro\",\n      \"crm\": \"SP123456\",\n      \"email\": \"ana.ribeiro@medicare.test\",\n      \"valorConsulta\": 250,\n      \"especialidade\": {\n        \"id\": 1,\n        \"nome\": \"Cardiologia\",\n        \"descricao\": \"Diagnóstico e tratamento de doenças cardiovasculares\"\n      }\n    },\n    \"paciente\": {\n      \"id\": 1,\n      \"nome\": \"Carlos Silva\",\n      \"cpf\": \"12345678901\",\n      \"email\": \"carlos@medicare.test\",\n      \"dataNascimento\": \"1990-05-20\",\n      \"convenio\": {\n        \"id\": 1,\n        \"nome\": \"Saúde Mais\",\n        \"percentualCobertura\": 60\n      }\n    },\n    \"dataHora\": \"2026-12-15T10:00:00\",\n    \"status\": \"AGENDADA\",\n    \"valorFinal\": 100,\n    \"observacoes\": \"Check-up anual\"\n  }\n]"
+            }
+          ]
         },
         {
           "name": "Listar consultas agendadas (200)",
-          "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/consultas?status=AGENDADA", "host": ["{{baseUrl}}"], "path": ["consultas"], "query": [{ "key": "status", "value": "AGENDADA" }] } }
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/consultas?status=AGENDADA",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "consultas"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "AGENDADA"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{baseUrl}}/consultas?status=AGENDADA",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "consultas"
+                  ],
+                  "query": [
+                    {
+                      "key": "status",
+                      "value": "AGENDADA"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:39:04 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"id\": 1,\n    \"medico\": {\n      \"id\": 1,\n      \"nome\": \"Dra. Ana Ribeiro\",\n      \"crm\": \"SP123456\",\n      \"email\": \"ana.ribeiro@medicare.test\",\n      \"valorConsulta\": 250,\n      \"especialidade\": {\n        \"id\": 1,\n        \"nome\": \"Cardiologia\",\n        \"descricao\": \"Diagnóstico e tratamento de doenças cardiovasculares\"\n      }\n    },\n    \"paciente\": {\n      \"id\": 1,\n      \"nome\": \"Carlos Silva\",\n      \"cpf\": \"12345678901\",\n      \"email\": \"carlos@medicare.test\",\n      \"dataNascimento\": \"1990-05-20\",\n      \"convenio\": {\n        \"id\": 1,\n        \"nome\": \"Saúde Mais\",\n        \"percentualCobertura\": 60\n      }\n    },\n    \"dataHora\": \"2026-12-15T10:00:00\",\n    \"status\": \"AGENDADA\",\n    \"valorFinal\": 100,\n    \"observacoes\": \"Check-up anual\"\n  }\n]"
+            }
+          ]
         }
       ]
     },
@@ -162,40 +1559,463 @@
           "name": "Médico com horário ocupado (409)",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "body": { "mode": "raw", "raw": "{\n  \"medicoId\": 1,\n  \"pacienteId\": 2,\n  \"dataHora\": \"{{dataConsulta}}\"\n}" },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"medicoId\": 1,\n  \"pacienteId\": 2,\n  \"dataHora\": \"{{dataConsulta}}\"\n}"
+            },
             "url": "{{baseUrl}}/consultas"
-          }
+          },
+          "response": [
+            {
+              "name": "409 Conflict",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"medicoId\": 1,\n  \"pacienteId\": 2,\n  \"dataHora\": \"{{dataConsulta}}\"\n}"
+                },
+                "url": "{{baseUrl}}/consultas"
+              },
+              "status": "Conflict",
+              "code": 409,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:39:04 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"timestamp\": \"2026-11-23T16:39:04.8082763\",\n  \"status\": 409,\n  \"erro\": \"Conflict\",\n  \"mensagem\": \"O médico já possui uma consulta agendada para 2026-12-15T10:00\",\n  \"detalhes\": []\n}"
+            }
+          ]
         },
         {
           "name": "Horário fora do expediente (409)",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "body": { "mode": "raw", "raw": "{\n  \"medicoId\": 1,\n  \"pacienteId\": 2,\n  \"dataHora\": \"2026-12-15T20:00:00\"\n}" },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"medicoId\": 1,\n  \"pacienteId\": 2,\n  \"dataHora\": \"2026-12-15T20:00:00\"\n}"
+            },
             "url": "{{baseUrl}}/consultas"
-          }
+          },
+          "response": [
+            {
+              "name": "409 Conflict",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"medicoId\": 1,\n  \"pacienteId\": 2,\n  \"dataHora\": \"2026-12-15T20:00:00\"\n}"
+                },
+                "url": "{{baseUrl}}/consultas"
+              },
+              "status": "Conflict",
+              "code": 409,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:39:04 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"timestamp\": \"2026-11-23T16:39:04.9631221\",\n  \"status\": 409,\n  \"erro\": \"Conflict\",\n  \"mensagem\": \"As consultas devem ser marcadas em hora cheia, entre 8h e 17h\",\n  \"detalhes\": []\n}"
+            }
+          ]
         },
         {
           "name": "Excluir especialidade com médicos (409)",
-          "request": { "method": "DELETE", "url": "{{baseUrl}}/especialidades/1" }
+          "request": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/especialidades/1"
+          },
+          "response": [
+            {
+              "name": "409 Conflict",
+              "originalRequest": {
+                "method": "DELETE",
+                "url": "{{baseUrl}}/especialidades/1"
+              },
+              "status": "Conflict",
+              "code": 409,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:39:05 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"timestamp\": \"2026-11-23T16:39:05.1181209\",\n  \"status\": 409,\n  \"erro\": \"Conflict\",\n  \"mensagem\": \"Não é possível excluir a especialidade Cardiologia porque existem médicos vinculados a ela\",\n  \"detalhes\": []\n}"
+            }
+          ]
         },
         {
           "name": "Valor de consulta inválido (409)",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Dr. Teste\",\n  \"crm\": \"SP000001\",\n  \"valorConsulta\": 0,\n  \"especialidadeId\": 1\n}" },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Dr. Teste\",\n  \"crm\": \"SP000001\",\n  \"valorConsulta\": 0,\n  \"especialidadeId\": 1\n}"
+            },
             "url": "{{baseUrl}}/medicos"
-          }
+          },
+          "response": [
+            {
+              "name": "409 Conflict",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nome\": \"Dr. Teste\",\n  \"crm\": \"SP000001\",\n  \"valorConsulta\": 0,\n  \"especialidadeId\": 1\n}"
+                },
+                "url": "{{baseUrl}}/medicos"
+              },
+              "status": "Conflict",
+              "code": 409,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:39:05 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"timestamp\": \"2026-11-23T16:39:05.2698025\",\n  \"status\": 409,\n  \"erro\": \"Conflict\",\n  \"mensagem\": \"O valor da consulta deve ser maior que zero\",\n  \"detalhes\": []\n}"
+            }
+          ]
         },
         {
           "name": "Cancelar consulta (200)",
-          "request": { "method": "PATCH", "url": "{{baseUrl}}/consultas/1/cancelar" }
+          "request": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/consultas/1/cancelar"
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "PATCH",
+                "url": "{{baseUrl}}/consultas/1/cancelar"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:39:05 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": 1,\n  \"medico\": {\n    \"id\": 1,\n    \"nome\": \"Dra. Ana Ribeiro\",\n    \"crm\": \"SP123456\",\n    \"email\": \"ana.ribeiro@medicare.test\",\n    \"valorConsulta\": 250,\n    \"especialidade\": {\n      \"id\": 1,\n      \"nome\": \"Cardiologia\",\n      \"descricao\": \"Diagnóstico e tratamento de doenças cardiovasculares\"\n    }\n  },\n  \"paciente\": {\n    \"id\": 1,\n    \"nome\": \"Carlos Silva\",\n    \"cpf\": \"12345678901\",\n    \"email\": \"carlos@medicare.test\",\n    \"dataNascimento\": \"1990-05-20\",\n    \"convenio\": {\n      \"id\": 1,\n      \"nome\": \"Saúde Mais\",\n      \"percentualCobertura\": 60\n    }\n  },\n  \"dataHora\": \"2026-12-15T10:00:00\",\n  \"status\": \"CANCELADA\",\n  \"valorFinal\": 100,\n  \"observacoes\": \"Check-up anual\"\n}"
+            }
+          ]
         },
         {
           "name": "Cancelar consulta já cancelada (409)",
-          "request": { "method": "PATCH", "url": "{{baseUrl}}/consultas/1/cancelar" }
+          "request": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/consultas/1/cancelar"
+          },
+          "response": [
+            {
+              "name": "409 Conflict",
+              "originalRequest": {
+                "method": "PATCH",
+                "url": "{{baseUrl}}/consultas/1/cancelar"
+              },
+              "status": "Conflict",
+              "code": 409,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:39:05 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"timestamp\": \"2026-11-23T16:39:05.5791438\",\n  \"status\": 409,\n  \"erro\": \"Conflict\",\n  \"mensagem\": \"Não é possível cancelar uma consulta com status CANCELADA\",\n  \"detalhes\": []\n}"
+            }
+          ]
         }
       ]
     },
@@ -206,32 +2026,317 @@
           "name": "Paciente com dados inválidos (400)",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "body": { "mode": "raw", "raw": "{\n  \"nome\": \"\",\n  \"cpf\": \"123\",\n  \"email\": \"email-invalido\"\n}" },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"\",\n  \"cpf\": \"123\",\n  \"email\": \"email-invalido\"\n}"
+            },
             "url": "{{baseUrl}}/pacientes"
-          }
+          },
+          "response": [
+            {
+              "name": "400 Bad Request",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nome\": \"\",\n  \"cpf\": \"123\",\n  \"email\": \"email-invalido\"\n}"
+                },
+                "url": "{{baseUrl}}/pacientes"
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:39:05 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"timestamp\": \"2026-11-23T16:39:05.7311445\",\n  \"status\": 400,\n  \"erro\": \"Bad Request\",\n  \"mensagem\": \"Dados inválidos\",\n  \"detalhes\": [\n    \"email: E-mail inválido\",\n    \"nome: O nome é obrigatório\",\n    \"cpf: O CPF deve ter 11 dígitos, sem pontos ou traço\"\n  ]\n}"
+            }
+          ]
         },
         {
           "name": "Consulta em data passada (400)",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "body": { "mode": "raw", "raw": "{\n  \"medicoId\": 1,\n  \"pacienteId\": 2,\n  \"dataHora\": \"2020-01-10T10:00:00\"\n}" },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"medicoId\": 1,\n  \"pacienteId\": 2,\n  \"dataHora\": \"2020-01-10T10:00:00\"\n}"
+            },
             "url": "{{baseUrl}}/consultas"
-          }
+          },
+          "response": [
+            {
+              "name": "400 Bad Request",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"medicoId\": 1,\n  \"pacienteId\": 2,\n  \"dataHora\": \"2020-01-10T10:00:00\"\n}"
+                },
+                "url": "{{baseUrl}}/consultas"
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:39:05 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"timestamp\": \"2026-11-23T16:39:05.8650139\",\n  \"status\": 400,\n  \"erro\": \"Bad Request\",\n  \"mensagem\": \"Dados inválidos\",\n  \"detalhes\": [\n    \"dataHora: A consulta deve ser agendada para uma data futura\"\n  ]\n}"
+            }
+          ]
         },
         {
           "name": "Convênio com cobertura acima de 100% (400)",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Convênio X\",\n  \"percentualCobertura\": 150\n}" },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Convênio X\",\n  \"percentualCobertura\": 150\n}"
+            },
             "url": "{{baseUrl}}/convenios"
-          }
+          },
+          "response": [
+            {
+              "name": "400 Bad Request",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nome\": \"Convênio X\",\n  \"percentualCobertura\": 150\n}"
+                },
+                "url": "{{baseUrl}}/convenios"
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:39:06 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"timestamp\": \"2026-11-23T16:39:06.0147083\",\n  \"status\": 400,\n  \"erro\": \"Bad Request\",\n  \"mensagem\": \"Dados inválidos\",\n  \"detalhes\": [\n    \"percentualCobertura: A cobertura máxima é 100%\"\n  ]\n}"
+            }
+          ]
         },
         {
           "name": "Médico inexistente (404)",
-          "request": { "method": "GET", "url": "{{baseUrl}}/medicos/999" }
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/medicos/999"
+          },
+          "response": [
+            {
+              "name": "404 Not Found",
+              "originalRequest": {
+                "method": "GET",
+                "url": "{{baseUrl}}/medicos/999"
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:39:06 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"timestamp\": \"2026-11-23T16:39:06.1666873\",\n  \"status\": 404,\n  \"erro\": \"Not Found\",\n  \"mensagem\": \"Médico com id 999 não encontrado(a)\",\n  \"detalhes\": []\n}"
+            }
+          ]
         }
       ]
     },
@@ -240,41 +2345,446 @@
       "item": [
         {
           "name": "Sem autenticação (401)",
-          "request": { "auth": { "type": "noauth" }, "method": "GET", "url": "{{baseUrl}}/pacientes" }
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "url": "{{baseUrl}}/pacientes"
+          },
+          "response": [
+            {
+              "name": "401 Unauthorized",
+              "originalRequest": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "url": "{{baseUrl}}/pacientes"
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "WWW-Authenticate",
+                  "value": "Basic realm=\"Realm\""
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "0"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:39:06 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": ""
+            }
+          ]
         },
         {
           "name": "Senha errada (401)",
           "request": {
-            "auth": { "type": "basic", "basic": [
-              { "key": "username", "value": "admin", "type": "string" },
-              { "key": "password", "value": "senha-errada", "type": "string" } ] },
-            "method": "GET", "url": "{{baseUrl}}/pacientes"
-          }
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "admin",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "senha-errada",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "url": "{{baseUrl}}/pacientes"
+          },
+          "response": [
+            {
+              "name": "401 Unauthorized",
+              "originalRequest": {
+                "auth": {
+                  "type": "basic",
+                  "basic": [
+                    {
+                      "key": "username",
+                      "value": "admin",
+                      "type": "string"
+                    },
+                    {
+                      "key": "password",
+                      "value": "senha-errada",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "url": "{{baseUrl}}/pacientes"
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "WWW-Authenticate",
+                  "value": "Basic realm=\"Realm\""
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "0"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:39:06 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": ""
+            }
+          ]
         },
         {
           "name": "Recepção tentando excluir paciente (403)",
           "request": {
-            "auth": { "type": "basic", "basic": [
-              { "key": "username", "value": "{{recepcaoUser}}", "type": "string" },
-              { "key": "password", "value": "{{recepcaoPass}}", "type": "string" } ] },
-            "method": "DELETE", "url": "{{baseUrl}}/pacientes/2"
-          }
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{recepcaoUser}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{recepcaoPass}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "url": "{{baseUrl}}/pacientes/2"
+          },
+          "response": [
+            {
+              "name": "403 Forbidden",
+              "originalRequest": {
+                "auth": {
+                  "type": "basic",
+                  "basic": [
+                    {
+                      "key": "username",
+                      "value": "{{recepcaoUser}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "password",
+                      "value": "{{recepcaoPass}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "url": "{{baseUrl}}/pacientes/2"
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:39:06 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"timestamp\": \"2026-11-23T19:39:06.566+00:00\",\n  \"status\": 403,\n  \"error\": \"Forbidden\",\n  \"path\": \"/api/pacientes/2\"\n}"
+            }
+          ]
         },
         {
           "name": "Recepção tentando cadastrar médico (403)",
           "request": {
-            "auth": { "type": "basic", "basic": [
-              { "key": "username", "value": "{{recepcaoUser}}", "type": "string" },
-              { "key": "password", "value": "{{recepcaoPass}}", "type": "string" } ] },
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{recepcaoUser}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{recepcaoPass}}",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Dr. Pedro\",\n  \"crm\": \"SP999999\",\n  \"valorConsulta\": 200,\n  \"especialidadeId\": 1\n}" },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Dr. Pedro\",\n  \"crm\": \"SP999999\",\n  \"valorConsulta\": 200,\n  \"especialidadeId\": 1\n}"
+            },
             "url": "{{baseUrl}}/medicos"
-          }
+          },
+          "response": [
+            {
+              "name": "403 Forbidden",
+              "originalRequest": {
+                "auth": {
+                  "type": "basic",
+                  "basic": [
+                    {
+                      "key": "username",
+                      "value": "{{recepcaoUser}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "password",
+                      "value": "{{recepcaoPass}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nome\": \"Dr. Pedro\",\n  \"crm\": \"SP999999\",\n  \"valorConsulta\": 200,\n  \"especialidadeId\": 1\n}"
+                },
+                "url": "{{baseUrl}}/medicos"
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:39:06 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"timestamp\": \"2026-11-23T19:39:06.715+00:00\",\n  \"status\": 403,\n  \"error\": \"Forbidden\",\n  \"path\": \"/api/medicos\"\n}"
+            }
+          ]
         },
         {
           "name": "Admin excluindo paciente sem consultas (204)",
-          "request": { "method": "DELETE", "url": "{{baseUrl}}/pacientes/2" }
+          "request": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/pacientes/2"
+          },
+          "response": [
+            {
+              "name": "204 No Content",
+              "originalRequest": {
+                "method": "DELETE",
+                "url": "{{baseUrl}}/pacientes/2"
+              },
+              "status": "No Content",
+              "code": 204,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:39:06 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": ""
+            }
+          ]
         }
       ]
     }
