@@ -1,0 +1,282 @@
+{
+  "info": {
+    "name": "Medicare - Projeto Integrador",
+    "description": "Testes da API Medicare. Rode com o banco vazio e na ordem (Run collection). Credenciais de teste: admin/admin123 (ADMIN) e recepcao/recepcao123 (RECEPCAO).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "basic",
+    "basic": [
+      { "key": "username", "value": "{{adminUser}}", "type": "string" },
+      { "key": "password", "value": "{{adminPass}}", "type": "string" }
+    ]
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8080/api" },
+    { "key": "adminUser", "value": "admin" },
+    { "key": "adminPass", "value": "admin123" },
+    { "key": "recepcaoUser", "value": "recepcao" },
+    { "key": "recepcaoPass", "value": "recepcao123" },
+    { "key": "dataConsulta", "value": "2026-12-15T10:00:00" },
+    { "key": "diaConsulta", "value": "2026-12-15" }
+  ],
+  "item": [
+    {
+      "name": "01 - CRUD",
+      "item": [
+        {
+          "name": "Criar especialidade (201)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Cardiologia\",\n  \"descricao\": \"Coração e sistema circulatório\"\n}" },
+            "url": "{{baseUrl}}/especialidades"
+          }
+        },
+        {
+          "name": "Criar especialidade sem médicos (201)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Dermatologia\",\n  \"descricao\": \"Pele, cabelo e unhas\"\n}" },
+            "url": "{{baseUrl}}/especialidades"
+          }
+        },
+        {
+          "name": "Listar especialidades (200)",
+          "request": { "method": "GET", "url": "{{baseUrl}}/especialidades" }
+        },
+        {
+          "name": "Atualizar especialidade (200)",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Cardiologia\",\n  \"descricao\": \"Diagnóstico e tratamento de doenças cardiovasculares\"\n}" },
+            "url": "{{baseUrl}}/especialidades/1"
+          }
+        },
+        {
+          "name": "Excluir especialidade sem médicos (204)",
+          "request": { "method": "DELETE", "url": "{{baseUrl}}/especialidades/2" }
+        },
+        {
+          "name": "Criar convênio (201)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Saúde Mais\",\n  \"percentualCobertura\": 60\n}" },
+            "url": "{{baseUrl}}/convenios"
+          }
+        },
+        {
+          "name": "Criar médico (201)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Dra. Ana Ribeiro\",\n  \"crm\": \"SP123456\",\n  \"email\": \"ana.ribeiro@medicare.test\",\n  \"valorConsulta\": 300.00,\n  \"especialidadeId\": 1\n}" },
+            "url": "{{baseUrl}}/medicos"
+          }
+        },
+        {
+          "name": "Atualizar médico (200)",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Dra. Ana Ribeiro\",\n  \"crm\": \"SP123456\",\n  \"email\": \"ana.ribeiro@medicare.test\",\n  \"valorConsulta\": 250.00,\n  \"especialidadeId\": 1\n}" },
+            "url": "{{baseUrl}}/medicos/1"
+          }
+        },
+        {
+          "name": "Criar paciente com convênio - recepção (201)",
+          "request": {
+            "auth": { "type": "basic", "basic": [
+              { "key": "username", "value": "{{recepcaoUser}}", "type": "string" },
+              { "key": "password", "value": "{{recepcaoPass}}", "type": "string" } ] },
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Carlos Silva\",\n  \"cpf\": \"12345678901\",\n  \"email\": \"carlos@medicare.test\",\n  \"dataNascimento\": \"1990-05-20\",\n  \"convenioId\": 1\n}" },
+            "url": "{{baseUrl}}/pacientes"
+          }
+        },
+        {
+          "name": "Criar paciente particular (201)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Mariana Souza\",\n  \"cpf\": \"98765432100\",\n  \"email\": \"mariana@medicare.test\",\n  \"dataNascimento\": \"1985-11-02\"\n}" },
+            "url": "{{baseUrl}}/pacientes"
+          }
+        },
+        {
+          "name": "Buscar paciente por id (200)",
+          "request": { "method": "GET", "url": "{{baseUrl}}/pacientes/1" }
+        }
+      ]
+    },
+    {
+      "name": "02 - Consultas personalizadas",
+      "item": [
+        {
+          "name": "Pacientes por nome (200)",
+          "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/pacientes?nome=silva", "host": ["{{baseUrl}}"], "path": ["pacientes"], "query": [{ "key": "nome", "value": "silva" }] } }
+        },
+        {
+          "name": "Médicos por especialidade (200)",
+          "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/medicos?especialidade=cardiologia", "host": ["{{baseUrl}}"], "path": ["medicos"], "query": [{ "key": "especialidade", "value": "cardiologia" }] } }
+        }
+      ]
+    },
+    {
+      "name": "03 - Funcionalidade do PI (agendamento)",
+      "item": [
+        {
+          "name": "Agendar consulta com desconto do convênio (201)",
+          "request": {
+            "auth": { "type": "basic", "basic": [
+              { "key": "username", "value": "{{recepcaoUser}}", "type": "string" },
+              { "key": "password", "value": "{{recepcaoPass}}", "type": "string" } ] },
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"medicoId\": 1,\n  \"pacienteId\": 1,\n  \"dataHora\": \"{{dataConsulta}}\",\n  \"observacoes\": \"Check-up anual\"\n}" },
+            "url": "{{baseUrl}}/consultas"
+          }
+        },
+        {
+          "name": "Agenda do médico no dia (200)",
+          "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/medicos/1/agenda?data={{diaConsulta}}", "host": ["{{baseUrl}}"], "path": ["medicos", "1", "agenda"], "query": [{ "key": "data", "value": "{{diaConsulta}}" }] } }
+        },
+        {
+          "name": "Histórico do paciente (200)",
+          "request": { "method": "GET", "url": "{{baseUrl}}/pacientes/1/historico" }
+        },
+        {
+          "name": "Listar consultas agendadas (200)",
+          "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/consultas?status=AGENDADA", "host": ["{{baseUrl}}"], "path": ["consultas"], "query": [{ "key": "status", "value": "AGENDADA" }] } }
+        }
+      ]
+    },
+    {
+      "name": "04 - Regras de negócio (409)",
+      "item": [
+        {
+          "name": "Médico com horário ocupado (409)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"medicoId\": 1,\n  \"pacienteId\": 2,\n  \"dataHora\": \"{{dataConsulta}}\"\n}" },
+            "url": "{{baseUrl}}/consultas"
+          }
+        },
+        {
+          "name": "Horário fora do expediente (409)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"medicoId\": 1,\n  \"pacienteId\": 2,\n  \"dataHora\": \"2026-12-15T20:00:00\"\n}" },
+            "url": "{{baseUrl}}/consultas"
+          }
+        },
+        {
+          "name": "Excluir especialidade com médicos (409)",
+          "request": { "method": "DELETE", "url": "{{baseUrl}}/especialidades/1" }
+        },
+        {
+          "name": "Valor de consulta inválido (409)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Dr. Teste\",\n  \"crm\": \"SP000001\",\n  \"valorConsulta\": 0,\n  \"especialidadeId\": 1\n}" },
+            "url": "{{baseUrl}}/medicos"
+          }
+        },
+        {
+          "name": "Cancelar consulta (200)",
+          "request": { "method": "PATCH", "url": "{{baseUrl}}/consultas/1/cancelar" }
+        },
+        {
+          "name": "Cancelar consulta já cancelada (409)",
+          "request": { "method": "PATCH", "url": "{{baseUrl}}/consultas/1/cancelar" }
+        }
+      ]
+    },
+    {
+      "name": "05 - Validação e erros",
+      "item": [
+        {
+          "name": "Paciente com dados inválidos (400)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nome\": \"\",\n  \"cpf\": \"123\",\n  \"email\": \"email-invalido\"\n}" },
+            "url": "{{baseUrl}}/pacientes"
+          }
+        },
+        {
+          "name": "Consulta em data passada (400)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"medicoId\": 1,\n  \"pacienteId\": 2,\n  \"dataHora\": \"2020-01-10T10:00:00\"\n}" },
+            "url": "{{baseUrl}}/consultas"
+          }
+        },
+        {
+          "name": "Convênio com cobertura acima de 100% (400)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Convênio X\",\n  \"percentualCobertura\": 150\n}" },
+            "url": "{{baseUrl}}/convenios"
+          }
+        },
+        {
+          "name": "Médico inexistente (404)",
+          "request": { "method": "GET", "url": "{{baseUrl}}/medicos/999" }
+        }
+      ]
+    },
+    {
+      "name": "06 - Segurança",
+      "item": [
+        {
+          "name": "Sem autenticação (401)",
+          "request": { "auth": { "type": "noauth" }, "method": "GET", "url": "{{baseUrl}}/pacientes" }
+        },
+        {
+          "name": "Senha errada (401)",
+          "request": {
+            "auth": { "type": "basic", "basic": [
+              { "key": "username", "value": "admin", "type": "string" },
+              { "key": "password", "value": "senha-errada", "type": "string" } ] },
+            "method": "GET", "url": "{{baseUrl}}/pacientes"
+          }
+        },
+        {
+          "name": "Recepção tentando excluir paciente (403)",
+          "request": {
+            "auth": { "type": "basic", "basic": [
+              { "key": "username", "value": "{{recepcaoUser}}", "type": "string" },
+              { "key": "password", "value": "{{recepcaoPass}}", "type": "string" } ] },
+            "method": "DELETE", "url": "{{baseUrl}}/pacientes/2"
+          }
+        },
+        {
+          "name": "Recepção tentando cadastrar médico (403)",
+          "request": {
+            "auth": { "type": "basic", "basic": [
+              { "key": "username", "value": "{{recepcaoUser}}", "type": "string" },
+              { "key": "password", "value": "{{recepcaoPass}}", "type": "string" } ] },
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Dr. Pedro\",\n  \"crm\": \"SP999999\",\n  \"valorConsulta\": 200,\n  \"especialidadeId\": 1\n}" },
+            "url": "{{baseUrl}}/medicos"
+          }
+        },
+        {
+          "name": "Admin excluindo paciente sem consultas (204)",
+          "request": { "method": "DELETE", "url": "{{baseUrl}}/pacientes/2" }
+        }
+      ]
+    }
+  ]
+}
