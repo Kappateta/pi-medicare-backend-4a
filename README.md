@@ -163,8 +163,6 @@ medicare-backend/
 
 ## Integrantes
 
-| Nome completo | ID acadêmico |
+| Nome completo | RA |
 |---|---|
-| _preencher_ | _preencher_ |
-| _preencher_ | _preencher_ |
-| _preencher_ | _preencher_ |
+| Carlos Eduardo Silva Pires Dias | 270274 |
